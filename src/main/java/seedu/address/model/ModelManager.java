@@ -189,6 +189,7 @@ public class ModelManager implements Model {
         Person person =addressBook.getPerson(personName);
         Group group = addressBook.getGroup(groupName);
         this.assignGroup(person, group);
+        updateFilteredPersonList(PREDICATE_SHOW_ALL_PERSONS);
         Pair<Person, Group> output = new Pair<>(person, group);
         return output;
     }
@@ -221,8 +222,8 @@ public class ModelManager implements Model {
      * @throws CommandException if person has already been assigned to group
      */
     private void unassignGroup(Person person, Group group) throws CommandException {
-        person.removeGroup(group);
         group.removePerson(person);
+        person.removeGroup(group);
     }
 
     @Override

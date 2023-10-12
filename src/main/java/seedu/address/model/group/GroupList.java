@@ -1,8 +1,10 @@
 package seedu.address.model.group;
 
 import static java.util.Objects.requireNonNull;
+import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
 
 import java.util.Iterator;
+import java.util.List;
 import java.util.stream.Stream;
 
 import javafx.collections.FXCollections;
@@ -12,6 +14,7 @@ import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.group.exceptions.DuplicateGroupException;
 import seedu.address.model.group.exceptions.GroupNotFoundException;
 import seedu.address.model.person.Person;
+import seedu.address.model.person.UniquePersonList;
 import seedu.address.model.person.exceptions.DuplicatePersonException;
 
 /**
@@ -19,7 +22,7 @@ import seedu.address.model.person.exceptions.DuplicatePersonException;
  */
 public class GroupList implements Iterable<Group> {
 
-    private ObservableList<Group> internalList = FXCollections.observableArrayList();
+    private final ObservableList<Group> internalList = FXCollections.observableArrayList();
     private final ObservableList<Group> internalUnmodifiableList =
             FXCollections.unmodifiableObservableList(internalList);
 
@@ -43,17 +46,27 @@ public class GroupList implements Iterable<Group> {
         internalList.add(toAdd);
     }
 
+
+    private boolean groupsAreUnique(List<Group> groups) {
+        for (int i = 0; i < groups.size() - 1; i++) {
+            for (int j = i + 1; j < groups.size(); j++) {
+                if (groups.get(i).isSameGroup(groups.get(j))) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
     /**
      * Removes the equivalent group from the list.
      * The group must exist in the list.
      */
     public void remove(Group toRemove) {
         requireNonNull(toRemove);
-        try {
-            internalList.remove(getGroup(toRemove.getName()));
-        } catch (CommandException e) {
-            System.out.println("Person is not in this group");
-        }
+        internalList.remove(toRemove);
+        System.out.println("Person is not in this group");
+
 //        if (!this.contains(toRemove)) {
 //            throw new GroupNotFoundException();
 //        }
