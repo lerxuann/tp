@@ -14,9 +14,10 @@ import seedu.address.model.person.exceptions.PersonNotFoundException;
 
 /**
  * A list of persons that enforces uniqueness between its elements and does not allow nulls.
- * A person is considered unique by comparing using {@code Person#isSamePerson(Person)}. As such, adding and updating of
- * persons uses Person#isSamePerson(Person) for equality so as to ensure that the person being added or updated is
- * unique in terms of identity in the UniquePersonList. However, the removal of a person uses Person#equals(Object) so
+ * A person is considered unique by comparing using {@code Person#isNumberTaken(Person), Person#isNameTaken(Person)
+ * and Person#isEmailTaken(Person)}. As such, adding and updating of persons uses the three tests for equality
+ * so as to ensure that the person being added or updated is unique in terms of fields in the UniquePersonList.
+ * However, the removal of a person uses Person#equals(Object) so
  * as to ensure that the person with exactly the same fields will be removed.
  *
  * Supports a minimal set of list operations.
@@ -34,7 +35,18 @@ public class UniquePersonList implements Iterable<Person> {
      */
     public boolean contains(Person toCheck) {
         requireNonNull(toCheck);
-        return internalList.stream().anyMatch(toCheck::isSamePerson);
+        return internalList.stream().anyMatch(toCheck::isSameName)
+                || internalList.stream().anyMatch(toCheck::isSameEmail)
+                || internalList.stream().anyMatch(toCheck::isSamePhone);
+    }
+
+    public boolean[] usedFields(Person toCheck) {
+        boolean[] fields = new boolean[4];
+        fields[1] = internalList.stream().anyMatch(toCheck::isSameName);
+        fields[2] = internalList.stream().anyMatch(toCheck::isSamePhone);
+        fields[3] = internalList.stream().anyMatch(toCheck::isSameEmail);
+        fields[0] = fields[1] && fields[2] && fields[3];
+        return fields;
     }
 
     /**
@@ -62,7 +74,8 @@ public class UniquePersonList implements Iterable<Person> {
             throw new PersonNotFoundException();
         }
 
-        if (!target.isSamePerson(editedPerson) && contains(editedPerson)) {
+        if (!target.isSamePerson(editedPerson)
+        && contains(editedPerson)) {
             throw new DuplicatePersonException();
         }
 

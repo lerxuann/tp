@@ -8,14 +8,11 @@ import java.util.List;
 import java.util.stream.Stream;
 
 import javafx.collections.FXCollections;
+import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
-import seedu.address.logic.commands.Command;
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.group.exceptions.DuplicateGroupException;
 import seedu.address.model.group.exceptions.GroupNotFoundException;
-import seedu.address.model.person.Person;
-import seedu.address.model.person.UniquePersonList;
-import seedu.address.model.person.exceptions.DuplicatePersonException;
 
 /**
  * A list containing groups
@@ -64,12 +61,9 @@ public class GroupList implements Iterable<Group> {
      */
     public void remove(Group toRemove) {
         requireNonNull(toRemove);
-        internalList.remove(toRemove);
-        System.out.println("Person is not in this group");
-
-//        if (!this.contains(toRemove)) {
-//            throw new GroupNotFoundException();
-//        }
+        if (!internalList.remove(toRemove)) {
+            throw new GroupNotFoundException();
+        }
     }
 
     /**

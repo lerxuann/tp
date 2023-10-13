@@ -101,6 +101,25 @@ public class Group {
                 .toString();
     }
 
+    public void printGrpMates() {
+        this.listOfGroupMates.forEach(x -> System.out.println(x.getName()));
+    }
+
+    @Override
+    public boolean equals(Object group) {
+        if (group == this) {
+            return true;
+        }
+
+        // instanceof handles nulls
+        if (!(group instanceof Group)) {
+            return false;
+        }
+
+        Group otherGroup = (Group) group;
+        return this.groupName.equals(otherGroup.getGroupName());
+    }
+
     public String getName() {
         return this.groupName;
     }

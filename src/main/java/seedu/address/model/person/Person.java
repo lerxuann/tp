@@ -87,18 +87,51 @@ public class Person {
         return personGroups.contains(group);
     }
 
+    /**
+     * Returns true if both persons have an identical field.
+     * This defines a weaker notion of equality between two persons.
+     */
+    public boolean isSamePerson(Person otherPerson) {
+        return isSameName(otherPerson) && isSamePhone(otherPerson)
+                && isSameEmail(otherPerson);
+    }
 
     /**
      * Returns true if both persons have the same name.
      * This defines a weaker notion of equality between two persons.
      */
-    public boolean isSamePerson(Person otherPerson) {
+    public boolean isSameName(Person otherPerson) {
         if (otherPerson == this) {
             return true;
         }
 
         return otherPerson != null
                 && otherPerson.getName().equals(getName());
+    }
+
+    /**
+     * Returns true if both persons have the same number.
+     * This defines a weaker notion of equality between two persons.
+     */
+    public boolean isSamePhone(Person otherPerson) {
+        if (otherPerson == this) {
+            return true;
+        }
+
+        return otherPerson != null
+                && otherPerson.getPhone().equals(getPhone());
+    }
+
+    /**
+     * Returns true if both persons have the same email.
+     * This defines a weaker notion of equality between two persons.
+     */
+    public boolean isSameEmail(Person otherPerson) {
+        if (otherPerson == this) {
+            return true;
+        }
+        return otherPerson != null
+                && otherPerson.getEmail().equals(getEmail());
     }
 
     public boolean nameEquals(String personName) {
