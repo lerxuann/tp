@@ -10,6 +10,8 @@ import seedu.address.model.person.Person;
 import seedu.address.model.person.exceptions.DuplicatePersonException;
 import seedu.address.model.person.exceptions.PersonNotFoundException;
 
+import java.util.List;
+
 /**
  * Class representing a group
  */
@@ -26,8 +28,22 @@ public class Group {
         this.groupName = groupName;
     }
 
+    /**
+     * Name field must be present and not null.
+     */
+    public Group(String groupName, List<Person> listOfGroupMates) {
+        requireNonNull(groupName);
+        requireNonNull(listOfGroupMates);
+        this.groupName = groupName;
+        this.listOfGroupMates.addAll(listOfGroupMates);
+    }
+
     public String getGroupName() {
         return groupName;
+    }
+
+    public ObservableList getGroupMates() {
+        return listOfGroupMates;
     }
 
     /**
