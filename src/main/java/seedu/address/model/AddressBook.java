@@ -139,6 +139,14 @@ public class AddressBook implements ReadOnlyAddressBook {
 //    }
 
     /**
+     * Adds a group to the address book.
+     * The group must not already exist in the address book.
+     */
+    public void addGroup(Group g, Person toAdd) throws CommandException {
+        groups.add(g, toAdd);
+    }
+
+    /**
      * Removes {@code key} from this {@code AddressBook}.
      * {@code key} must exist in the address book.
      */
