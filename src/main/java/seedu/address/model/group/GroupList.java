@@ -13,6 +13,7 @@ import javafx.collections.ObservableList;
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.group.exceptions.DuplicateGroupException;
 import seedu.address.model.group.exceptions.GroupNotFoundException;
+import seedu.address.model.person.Person;
 
 /**
  * A list containing groups
@@ -41,6 +42,19 @@ public class GroupList implements Iterable<Group> {
             throw new DuplicateGroupException();
         }
         internalList.add(toAdd);
+    }
+
+    /**
+     * Adds a group to the list.
+     * The group must not already exist in the list.
+     */
+    public void add(Group groupToAdd, Person personToAdd) throws CommandException {
+        requireNonNull(groupToAdd);
+        if (this.contains(groupToAdd)) {
+            throw new DuplicateGroupException();
+        }
+        groupToAdd.addPerson(personToAdd);
+        internalList.add(groupToAdd);
     }
 
 
