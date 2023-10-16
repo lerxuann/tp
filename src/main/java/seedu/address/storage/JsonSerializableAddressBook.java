@@ -8,11 +8,13 @@
     import com.fasterxml.jackson.annotation.JsonProperty;
     import com.fasterxml.jackson.annotation.JsonRootName;
 
-    import seedu.address.commons.exceptions.IllegalValueException;
-    import seedu.address.logic.commands.exceptions.CommandException;
-    import seedu.address.model.AddressBook;
-    import seedu.address.model.ReadOnlyAddressBook;
-    import seedu.address.model.person.Person;
+import seedu.address.commons.exceptions.IllegalValueException;
+import seedu.address.logic.commands.exceptions.CommandException;
+import seedu.address.model.AddressBook;
+import seedu.address.model.ReadOnlyAddressBook;
+import seedu.address.model.group.Group;
+import seedu.address.model.person.Person;
+
 
     /**
      * An Immutable AddressBook that is serializable to JSON format.
@@ -53,22 +55,22 @@
                 if (addressBook.hasPerson(person)) {
                     throw new IllegalValueException(MESSAGE_DUPLICATE_PERSON);
                 }
-                addressBook.addPerson(person);
 
-                person.getGroups().toStream().map(group -> {
-                    try {
-                        if (addressBook.hasGroup(group)) {
-                            group.addPerson(person);
-                        } else {
-                            addressBook.addGroup(group, person);
-                        }
-                    } catch (CommandException e) {
-                        System.out.println("error");
-                        throw new RuntimeException(e);
+            addressBook.addPerson(person);
+
+            person.getGroups().toStream().forEach(group -> {
+                try {
+                    if (addressBook.hasGroup(group)) {
+                        group.addPerson(person);
+                    } else {
+                        addressBook.addGroup(group);
+                        group.addPerson(person);
                     }
-                    return group; // return the group
-                });
-            }
+                } catch (CommandException e) {
+                    System.out.println("error");
+                    throw new RuntimeException(e);
+                }
+            });
             return addressBook;
         }
     }

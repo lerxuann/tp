@@ -56,7 +56,7 @@ public class Group {
         }
 
         return otherGroup != null
-                && otherGroup.getGroupName().equals(getGroupName());
+                && this.equals(otherGroup);
     }
 
     /**
