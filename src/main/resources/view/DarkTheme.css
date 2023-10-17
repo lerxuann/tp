@@ -1,7 +1,3 @@
-.background {
-    -fx-background-color: derive(#1d1d1d, 20%);
-    background-color: #383838; /* Used in the default.html file */
-}
 
 .label {
     -fx-font-size: 11pt;
@@ -44,25 +40,13 @@
 .table-view {
     -fx-base: #1d1d1d;
     -fx-control-inner-background: #1d1d1d;
-    -fx-background-color: #1d1d1d;
-    -fx-table-cell-border-color: transparent;
-    -fx-table-header-border-color: transparent;
     -fx-padding: 5;
-}
-
-.table-view .column-header-background {
-    -fx-background-color: transparent;
 }
 
 .table-view .column-header, .table-view .filler {
     -fx-size: 35;
     -fx-border-width: 0 0 1 0;
-    -fx-background-color: transparent;
-    -fx-border-color:
-        transparent
-        transparent
-        derive(-fx-base, 80%)
-        transparent;
+    -fx-border-color: derive(-fx-base, 80%);
     -fx-border-insets: 0 10 1 0;
 }
 
@@ -74,27 +58,7 @@
     -fx-opacity: 1;
 }
 
-.table-view:focused .table-row-cell:filled:focused:selected {
-    -fx-background-color: -fx-focus-color;
-}
-
-.split-pane:horizontal .split-pane-divider {
-    -fx-background-color: derive(#1d1d1d, 20%);
-    -fx-border-color: transparent transparent transparent #4d4d4d;
-}
-
-.split-pane {
-    -fx-border-radius: 1;
-    -fx-border-width: 1;
-    -fx-background-color: derive(#1d1d1d, 20%);
-}
-
-.list-view {
-    -fx-background-insets: 0;
-    -fx-padding: 0;
-    -fx-background-color: derive(#1d1d1d, 20%);
-}
-
+// to separate the contact boxes
 .list-cell {
     -fx-label-padding: 0 0 0 0;
     -fx-graphic-text-gap : 0;
@@ -102,7 +66,7 @@
 }
 
 .list-cell:filled:even {
-    -fx-background-color: rgba(255, 255, 255, 0.5);
+    -fx-background-color: rgba(255, 255, 255, 0.4);
     -fx-effect: dropshadow(gaussian, #ffd4d4, 50, 0, 0, 0);
     -fx-background-insets: 0;
     -fx-background-radius: 0;
@@ -110,24 +74,12 @@
 }
 
 .list-cell:filled:odd {
-    -fx-background-color: rgba(255, 255, 255, 0.5);
+    -fx-background-color: rgba(255, 255, 255, 0.4);
     -fx-effect: dropshadow(gaussian, #ffd4d4, 50, 0, 0, 0);
     -fx-background-insets: 0;
     -fx-background-radius: 0;
 }
 
-.list-cell:filled:selected {
-    -fx-background-color: #F0D9AC;
-}
-
-.list-cell:filled:selected #cardPane {
-    -fx-border-color: #3e7b91;
-    -fx-border-width: 0;
-}
-
-.list-cell .label {
-    -fx-text-fill: black;
-}
 
 .cell_big_label {
     -fx-font-family: "Segoe UI Semibold";
@@ -142,19 +94,18 @@
 }
 
 .pane-with-border {
-     -fx-background-color: derive(#FEBBCC, 0%);
-     -fx-border-color: derive(#FEBBCC, 0%);
+     -fx-background-color: #56494c;
+     -fx-border-color: #56494c;
 }
 
 .status-bar {
-    -fx-background-color: derive(#D2B48C, 30%);
+    -fx-background-color: derive(#56494c, 5%);
 }
 
 .result-display {
     -fx-font-family: "Segoe UI Light";
     -fx-font-size: 13pt;
     -fx-text-fill: white;
-
 }
 
 .result-display .label {
@@ -185,19 +136,20 @@
 }
 
 .grid-pane .stack-pane {
-    -fx-background-color: derive(#1d1d1d, 30%);
+    -fx-background-color: #818080;
 }
 
 .context-menu {
-    -fx-background-color: derive(#1d1d1d, 50%);
+    -fx-background-color: #818080;
 }
 
 .context-menu .label {
     -fx-text-fill: white;
 }
 
+// top bar
 .menu-bar {
-    -fx-background-color: derive(#CE98A5, 0%);
+    -fx-background-color: derive(#56494c, 5%);
 }
 
 .menu-bar .label {
@@ -341,9 +293,10 @@
     -fx-background-color: #D2B48C
 }
 
-//result display below input box
 #resultDisplay .content{
-    -fx-background-color: #ffcfcf;
+    -fx-background-color: #9B6572;
+    border-color: #B88491
+    border-radius: 0;
 
 }
 
@@ -355,7 +308,7 @@
 
 #groups .label {
     -fx-text-fill: white;
-    -fx-background-color: #3e7b91;
+    -fx-background-color: #E18888;
     -fx-padding: 1 3 1 3;
     -fx-border-radius: 2;
     -fx-background-radius: 2;

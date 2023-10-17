@@ -24,12 +24,13 @@
       </stylesheets>
 
       <VBox>
-        <MenuBar fx:id="menuBar" VBox.vgrow="NEVER">
-          <Menu mnemonicParsing="false" text="File">
-            <MenuItem mnemonicParsing="false" onAction="#handleExit" text="Exit" />
+        <MenuBar fx:id="menuBar" VBox.vgrow="NEVER" >
+          <Menu mnemonicParsing="false" fx:id="button" text="File" styleClass="custom-menu-item">
+            <MenuItem mnemonicParsing="false" onAction="#handleExit" text="Exit" styleClass="custom-menu-item"/>
           </Menu>
-          <Menu mnemonicParsing="false" text="Help">
-            <MenuItem fx:id="helpMenuItem" mnemonicParsing="false" onAction="#handleHelp" text="Help" />
+          <Menu mnemonicParsing="false" text="Help" styleClass="custom-menu-item">
+            <MenuItem fx:id="helpMenuItem" mnemonicParsing="false" onAction="#handleHelp"
+                      text="Help" styleClass="custom-menu-item" />
           </Menu>
         </MenuBar>
 

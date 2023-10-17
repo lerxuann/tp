@@ -17,7 +17,7 @@ public class UngroupPersonCommand extends Command {
 
     public static final String COMMAND_WORD = "ungroup";
 
-    public static final String MESSAGE_USAGE = COMMAND_WORD + ": Removes a person from a group in the address book. "
+    public static final String MESSAGE_USAGE = COMMAND_WORD + ": Removes a person from a group in the address book.\n"
             + "Parameters: "
             + PREFIX_NAME + "NAME "
             + PREFIX_GROUPTAG + "GROUP ";

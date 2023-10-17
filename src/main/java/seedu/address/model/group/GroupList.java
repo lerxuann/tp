@@ -59,6 +59,7 @@ public class GroupList implements Iterable<Group> {
     }
 
 
+
     private boolean groupsAreUnique(List<Group> groups) {
         for (int i = 0; i < groups.size() - 1; i++) {
             for (int j = i + 1; j < groups.size(); j++) {

@@ -20,7 +20,7 @@ public class GroupPersonCommand extends Command {
 
 	public static final java.lang.String COMMAND_WORD = "group";
 
-	public static final java.lang.String MESSAGE_USAGE = COMMAND_WORD + ": Adds a person to a group in the address book. "
+	public static final java.lang.String MESSAGE_USAGE = COMMAND_WORD + ": Adds a person to a group in the address book.\n"
 			+ "Parameters: "
 			+ PREFIX_NAME + "NAME "
 			+ PREFIX_GROUPTAG + "GROUP ";

@@ -14,7 +14,7 @@ import seedu.address.model.Model;
 public class CreateGroupCommand extends Command {
     public static final String COMMAND_WORD = "new";
 
-    public static final String MESSAGE_USAGE = COMMAND_WORD + ": Adds a group to the address book. "
+    public static final String MESSAGE_USAGE = COMMAND_WORD + ": Adds a group to the address book. \n"
             + "Parameters: "
             + PREFIX_GROUPTAG + "GROUPNAME \n"
             + "Example: " + COMMAND_WORD + " "
