@@ -222,6 +222,8 @@ Clears all entries from the contact list.
 
 Format: `clear`
 
+Expected output when succeeds: Address book has been cleared!<br>
+
 ### Exiting the program : `exit`
 
 Exits the program.

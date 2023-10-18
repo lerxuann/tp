@@ -105,8 +105,10 @@ public class ModelManager implements Model {
     }
 
     @Override
-    public void deletePerson(Person target) {
-        addressBook.removePerson(target);
+    public Person deletePerson(String personName) throws CommandException {
+        Person person =addressBook.getPerson(personName);
+        addressBook.removePerson(person);
+        return person;
     }
 
     @Override

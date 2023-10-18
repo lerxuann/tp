@@ -42,13 +42,9 @@ public class DeleteCommandParser implements Parser<DeleteCommand> {
                     String.format(MESSAGE_INVALID_COMMAND_FORMAT, DeleteCommand.MESSAGE_USAGE));
         }
 
-        String trimmedName = args.trim().substring(2);
-        if (trimmedName.isEmpty()) {
-            throw new ParseException(
-                    String.format(MESSAGE_INVALID_COMMAND_FORMAT, DeleteCommand.MESSAGE_USAGE));
-        }
-        String[] nameWords = trimmedName.toLowerCase().split("\\s+");
-        return new DeleteCommand(new NameContainsKeywordsPredicate(Arrays.asList(nameWords)));
+        String personName = argMultimap.getValue(PREFIX_NAME).get();
+
+        return new DeleteCommand(personName);
     }
 
     private static boolean arePrefixesPresent(ArgumentMultimap argumentMultimap, Prefix... prefixes) {
