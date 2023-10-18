@@ -48,9 +48,11 @@ public class AddressBookParserTest {
 
     @Test
     public void parseCommand_delete() throws Exception {
+        NameContainsKeywordsPredicate predicateExample = new NameContainsKeywordsPredicate(
+                Arrays.asList("Alex Yeoh".split("\\s+")))
         DeleteCommand command = (DeleteCommand) parser.parseCommand(
-                DeleteCommand.COMMAND_WORD + " " + INDEX_FIRST_PERSON.getOneBased());
-        assertEquals(new DeleteCommand(INDEX_FIRST_PERSON), command);
+                DeleteCommand.COMMAND_WORD + " " + "Alex Yeoh");
+        assertEquals(new DeleteCommand(predicateExample), command);
     }
 
     @Test
