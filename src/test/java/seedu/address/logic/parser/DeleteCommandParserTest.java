@@ -22,12 +22,11 @@ import java.util.Arrays;
 public class DeleteCommandParserTest {
 
     private DeleteCommandParser parser = new DeleteCommandParser();
-    private NameContainsKeywordsPredicate PREDICATE_EXAMPLE = new NameContainsKeywordsPredicate(
-            Arrays.asList("Alex Yeoh".split("\\s+")));
+    private String PERSONNAME_EXAMPLE = "Alex Yeoh";
 
     @Test
     public void parse_validArgs_returnsDeleteCommand() {
-        assertParseSuccess(parser, "1", new DeleteCommand(PREDICATE_EXAMPLE));
+        assertParseSuccess(parser, "1", new DeleteCommand(PERSONNAME_EXAMPLE));
     }
 
     @Test

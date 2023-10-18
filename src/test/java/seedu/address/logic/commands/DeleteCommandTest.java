@@ -9,6 +9,7 @@ import static seedu.address.testutil.TypicalPersons.getTypicalAddressBook;
 
 import org.junit.jupiter.api.Test;
 
+import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.Model;
 import seedu.address.model.ModelManager;
 import seedu.address.model.UserPrefs;
@@ -26,7 +27,7 @@ public class DeleteCommandTest {
     private String PERSONNAME_SECONDEXAMPLE = "Alex";
 
     @Test
-    public void execute_validName_success() {
+    public void execute_validName_success() throws CommandException  {
         Person personToDelete = model.deletePerson(PERSONNAME_EXAMPLE);
         DeleteCommand deleteCommand = new DeleteCommand(PERSONNAME_EXAMPLE);
 
@@ -40,7 +41,7 @@ public class DeleteCommandTest {
     }
 
     @Test
-    public void execute_invalidName_throwsCommandException() {
+    public void execute_invalidName_throwsCommandException() throws CommandException {
         Person personToDelete = model.deletePerson(PERSONNAME_EXAMPLE);
         DeleteCommand deleteCommand = new DeleteCommand(PERSONNAME_EXAMPLE);
 
