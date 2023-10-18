@@ -5,22 +5,15 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static seedu.address.logic.commands.CommandTestUtil.assertCommandFailure;
 import static seedu.address.logic.commands.CommandTestUtil.assertCommandSuccess;
-import static seedu.address.logic.commands.CommandTestUtil.showPersonAtIndex;
-import static seedu.address.testutil.TypicalIndexes.INDEX_FIRST_PERSON;
-import static seedu.address.testutil.TypicalIndexes.INDEX_SECOND_PERSON;
 import static seedu.address.testutil.TypicalPersons.getTypicalAddressBook;
 
 import org.junit.jupiter.api.Test;
 
-import seedu.address.commons.core.index.Index;
-import seedu.address.logic.Messages;
 import seedu.address.model.Model;
 import seedu.address.model.ModelManager;
 import seedu.address.model.UserPrefs;
-import seedu.address.model.person.NameContainsKeywordsPredicate;
 import seedu.address.model.person.Person;
 
-import java.util.Arrays;
 
 /**
  * Contains integration tests (interaction with the Model) and unit tests for
@@ -29,45 +22,41 @@ import java.util.Arrays;
 public class DeleteCommandTest {
 
     private Model model = new ModelManager(getTypicalAddressBook(), new UserPrefs());
-    private NameContainsKeywordsPredicate PREDICATE_EXAMPLE = new NameContainsKeywordsPredicate(
-            Arrays.asList("Alex Yeoh".split("\\s+")));
-    private NameContainsKeywordsPredicate PREDICATE_SECOND_EXAMPLE = new NameContainsKeywordsPredicate(
-            Arrays.asList("Nicholas Tan".split("\\s+")));
+    private String PERSONNAME_EXAMPLE = "Alex Yeoh";
+    private String PERSONNAME_SECONDEXAMPLE = "Alex";
 
     @Test
     public void execute_validName_success() {
-        model.updateFilteredPersonList(PREDICATE_EXAMPLE);
-        Person personToDelete = model.getFilteredPersonList().get(0);
-        DeleteCommand deleteCommand = new DeleteCommand(PREDICATE_EXAMPLE);
+        Person personToDelete = model.deletePerson(PERSONNAME_EXAMPLE);
+        DeleteCommand deleteCommand = new DeleteCommand(PERSONNAME_EXAMPLE);
 
         String expectedMessage = String.format(DeleteCommand.MESSAGE_DELETE_PERSON_SUCCESS,
-                Messages.format(personToDelete));
+                personToDelete.getName().fullName);
 
         ModelManager expectedModel = new ModelManager(model.getAddressBook(), new UserPrefs());
-        expectedModel.deletePerson(personToDelete);
+        expectedModel.deletePerson(personToDelete.getName().fullName);
 
         assertCommandSuccess(deleteCommand, model, expectedMessage, expectedModel);
     }
 
     @Test
     public void execute_invalidName_throwsCommandException() {
-        model.updateFilteredPersonList(PREDICATE_EXAMPLE);
-        Person personToDelete = model.getFilteredPersonList().get(0);
-        DeleteCommand deleteCommand = new DeleteCommand(PREDICATE_SECOND_EXAMPLE);
+        Person personToDelete = model.deletePerson(PERSONNAME_EXAMPLE);
+        DeleteCommand deleteCommand = new DeleteCommand(PERSONNAME_EXAMPLE);
 
         assertCommandFailure(deleteCommand, model, DeleteCommand.MESSAGE_NO_PERSON_WITH_NAME_FOUND);
     }
 
     @Test
     public void equals() {
-        DeleteCommand deleteFirstCommand = new DeleteCommand(PREDICATE_EXAMPLE);
-        DeleteCommand deleteSecondCommand = new DeleteCommand(PREDICATE_SECOND_EXAMPLE);
+        DeleteCommand deleteFirstCommand = new DeleteCommand(PERSONNAME_EXAMPLE);
+        DeleteCommand deleteSecondCommand = new DeleteCommand(PERSONNAME_SECONDEXAMPLE);
 
         // same object -> returns true
         assertTrue(deleteFirstCommand.equals(deleteFirstCommand));
 
         // same values -> returns true
-        DeleteCommand deleteFirstCommandCopy = new DeleteCommand(PREDICATE_EXAMPLE);
+        DeleteCommand deleteFirstCommandCopy = new DeleteCommand(PERSONNAME_EXAMPLE);
         assertTrue(deleteFirstCommand.equals(deleteFirstCommandCopy));
 
         // different types -> returns false
@@ -82,9 +71,8 @@ public class DeleteCommandTest {
 
     @Test
     public void toStringMethod() {
-        Index targetIndex = Index.fromOneBased(1);
-        DeleteCommand deleteCommand = new DeleteCommand(PREDICATE_EXAMPLE);
-        String expected = DeleteCommand.class.getCanonicalName() + "{name=" + PREDICATE_EXAMPLE.toString() + "}";
+        DeleteCommand deleteCommand = new DeleteCommand(PERSONNAME_EXAMPLE);
+        String expected = DeleteCommand.class.getCanonicalName() + "{name=" + PERSONNAME_EXAMPLE + "}";
         assertEquals(expected, deleteCommand.toString());
     }
 
