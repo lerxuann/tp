@@ -68,11 +68,14 @@ public class AddCommand extends Command {
                 return new CommandResult(e.getMessage());
             }
         }
-
+        // other than toAdd the reference to person
+        // need a group reference also
         model.addPerson(toAdd);
         toAdd.getGroups().toStream().findFirst().ifPresent(group -> {
+            // adding group to the total grouplist
             model.addGroup(group);
             try {
+                // group reference to person
                 group.addPerson(toAdd);
             } catch (CommandException e) {
 
