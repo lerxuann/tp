@@ -8,6 +8,7 @@ import java.util.List;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import seedu.address.logic.commands.UngroupPersonCommand;
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.person.exceptions.DuplicatePersonException;
 import seedu.address.model.person.exceptions.PersonNotFoundException;
@@ -168,6 +169,6 @@ public class UniquePersonList implements Iterable<Person> {
               return person;
            }
        }
-       throw new CommandException("Person does not exist");
+       throw new CommandException(UngroupPersonCommand.MESSAGE_NO_PERSON_WITH_NAME_FOUND);
     }
 }

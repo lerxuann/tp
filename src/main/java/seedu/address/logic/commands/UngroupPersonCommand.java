@@ -23,6 +23,8 @@ public class UngroupPersonCommand extends Command {
             + PREFIX_GROUPTAG + "GROUP ";
 
     public static final String MESSAGE_SUCCESS = "%1$s is no longer a part of %2$s";
+    public static final String MESSAGE_NO_PERSON_WITH_NAME_FOUND = "No one with such name found.\n"
+            + "Please provide the person's full name as in the existing contactlist.";
     private final String personName;
     private final String groupName;
 

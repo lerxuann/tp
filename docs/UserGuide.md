@@ -19,15 +19,15 @@ This project is based on the AddressBook-Level3 project created by the [SE-EDU i
 
 1. Ensure you have Java `11` or above installed in your Computer.
 
-1. Download the latest `ProjectPRO.jar` from [here](https://github.com/AY2324S1-CS2103T-T10-3/tp/releases).
+2. Download the latest `ProjectPRO.jar` from [here](https://github.com/AY2324S1-CS2103T-T10-3/tp/releases).
 
-1. Copy the file to the folder you want to use as the _home folder_.
+3. Copy the file to the folder you want to use as the _home folder_.
 
-1. Open a command terminal, `cd` into the folder you put the jar file in, and use the `java -jar ProjectPRO.jar` command to run the application.<br>
+4. Open a command terminal, `cd` into the folder you put the jar file in, and use the `java -jar ProjectPRO.jar` command to run the application.<br>
    A GUI similar to the below should appear in a few seconds. Note how the app contains some sample data.<br>
    ![Ui](images/Ui.png)
 
-1. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br>
+5. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br>
    Some example commands you can try:
 
    * `list` : Lists all contacts.
@@ -40,7 +40,7 @@ This project is based on the AddressBook-Level3 project created by the [SE-EDU i
 
    * `exit` : Exits the app.
 
-1. Refer to the [Features](#features) below for details of each command.
+6. Refer to the [Features](#features) below for details of each command.
 
 --------------------------------------------------------------------------------------------------------------------
 
