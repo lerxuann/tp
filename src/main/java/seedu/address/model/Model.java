@@ -112,7 +112,7 @@ public interface Model {
      * Removes {@code key} from this {@code AddressBook}.
      * {@code key} must exist in the address book.
      */
-    public void removeGroup(Group key);
+    public Group deleteGroup(String groupName) throws CommandException;
 
     /**
      * Assign person to group and return corresponding person and group object in a pair

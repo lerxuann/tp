@@ -1,15 +1,16 @@
 package seedu.address.logic.parser;
 
 import static seedu.address.logic.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_GROUPTAG;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
 
-import java.util.Arrays;
 import java.util.stream.Stream;
 
 import seedu.address.logic.commands.DeleteCommand;
+import seedu.address.logic.commands.DeleteGroupCommand;
+import seedu.address.logic.commands.DeletePersonCommand;
 import seedu.address.logic.commands.GroupPersonCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
-import seedu.address.model.person.NameContainsKeywordsPredicate;
 
 /**
  * Parses input arguments and creates a new DeleteCommand object
@@ -29,22 +30,35 @@ public class DeleteCommandParser implements Parser<DeleteCommand> {
         }
 
         ArgumentMultimap argMultimap =
-                ArgumentTokenizer.tokenize(args, PREFIX_NAME);
-
-        // checking if n/ is present
-        if (!arePrefixesPresent(argMultimap, PREFIX_NAME)
-                || !argMultimap.getPreamble().isEmpty()) {
-            throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, DeleteCommand.MESSAGE_USAGE));
-        }
+                ArgumentTokenizer.tokenize(args, PREFIX_NAME, PREFIX_GROUPTAG);
 
         if (args.length() < 2) {
             throw new ParseException(
                     String.format(MESSAGE_INVALID_COMMAND_FORMAT, DeleteCommand.MESSAGE_USAGE));
         }
 
-        String personName = argMultimap.getValue(PREFIX_NAME).get();
+        // check if either n/ or g/ are present
+        if (!arePrefixesPresent(argMultimap, PREFIX_NAME)
+                || !argMultimap.getPreamble().isEmpty()) {
+            if (!arePrefixesPresent(argMultimap, PREFIX_GROUPTAG)) {
+                throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, DeleteCommand.MESSAGE_USAGE));
+            }
+        }
 
-        return new DeleteCommand(personName);
+        // if n/ is present
+        if (arePrefixesPresent(argMultimap, PREFIX_NAME)) {
+            // check if g/ is present
+            if (arePrefixesPresent(argMultimap, PREFIX_GROUPTAG)) { // g/ present
+                throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, DeleteCommand.MESSAGE_USAGE));
+            } else {
+                String personName = argMultimap.getValue(PREFIX_NAME).get();
+                return new DeletePersonCommand(personName);
+            }
+        }
+
+        // n/ not present, g/ should be present
+        String groupName = argMultimap.getValue(PREFIX_GROUPTAG).get();
+        return new DeleteGroupCommand(groupName);
     }
 
     private static boolean arePrefixesPresent(ArgumentMultimap argumentMultimap, Prefix... prefixes) {

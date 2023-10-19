@@ -105,6 +105,10 @@ public class Group {
         this.listOfGroupMates.forEach(x -> System.out.println(x.getName()));
     }
 
+    public ObservableList<Person> getListOfGroupMates() {
+        return this.listOfGroupMates;
+    }
+
     @Override
     public boolean equals(Object group) {
         if (group == this) {

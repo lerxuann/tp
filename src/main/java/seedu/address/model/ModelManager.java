@@ -144,8 +144,10 @@ public class ModelManager implements Model {
      * Removes {@code key} from this {@code AddressBook}.
      * {@code key} must exist in the address book.
      */
-    public void removeGroup(Group group) {
+    public Group deleteGroup(String groupName) throws CommandException {
+        Group group =addressBook.getGroup(groupName);
         addressBook.removeGroup(group);
+        return group;
     }
 
     //=========== Filtered Person List Accessors =============================================================
