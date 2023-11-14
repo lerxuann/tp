@@ -1,0 +1,296 @@
+{
+  "enableSearch": true,
+  "pages": [
+    {
+      "src": "AboutUs.md",
+      "title": "About Us",
+      "headings": {
+        "about-us": "About Us",
+        "project-team": "Project team",
+        "kailashwaran": "Kailashwaran",
+        "huang-yixin": "Huang Yixin",
+        "nicholas-tng": "Nicholas Tng",
+        "goh-ler-xuan": "Goh Ler Xuan",
+        "ong-zhen-dong": "Ong Zhen Dong"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "Configuration.md",
+      "title": "Configuration guide",
+      "headings": {
+        "configuration-guide": "Configuration guide"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "DevOps.md",
+      "title": "DevOps guide",
+      "headings": {
+        "devops-guide": "DevOps guide",
+        "build-automation": "Build automation",
+        "continuous-integration-ci": "Continuous integration (CI)",
+        "code-coverage": "Code coverage",
+        "repository-wide-checks": "Repository-wide checks",
+        "making-a-release": "Making a release"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "DeveloperGuide.md",
+      "title": "Developer Guide",
+      "headings": {
+        "projectpro-developer-guide": "ProjectPRO Developer Guide",
+        "1-introduction": "1. Introduction",
+        "1-1-product-overview": "1.1. Product Overview",
+        "1-2-setting-up-getting-started": "1.2 Setting up getting started",
+        "1-3-acknowledgements": "1.3 Acknowledgements",
+        "2-design": "2 Design",
+        "2-1-architecture": "2.1 Architecture",
+        "2-2-ui-component": "2.2 UI component",
+        "2-3-logic-component": "2.3 Logic component",
+        "2-4-model-component": "2.4 Model component",
+        "2-5-storage-component": "2.5 Storage component",
+        "2-6-common-classes": "2.6 Common classes",
+        "3-implementation": "3 Implementation",
+        "3-1-adding-a-person": "3.1 Adding a Person",
+        "3-2-adding-a-group": "3.2 Adding a Group",
+        "3-3-delete-person-and-group": "3.3 Delete Person and Group",
+        "delete-person": "Delete Person",
+        "delete-group": "Delete Group",
+        "3-4-list-person-and-list-group": "3.4 List Person and list group",
+        "list-person": "List-Person",
+        "3-5-find-person-and-find-group-features": "3.5 Find Person and Find Group features",
+        "find-person": "Find Person",
+        "find-group": "Find Group",
+        "3-6-group-and-ungrouping-person": "3.6 Group and Ungrouping Person",
+        "3-7-adding-a-group-remark": "3.7 Adding a Group Remark",
+        "3-8-adding-time-to-a-person-or-group": "3.8 Adding Time to a Person or Group",
+        "adding-time-to-a-person": "Adding Time to a Person",
+        "adding-time-to-a-group": "Adding Time to a Group",
+        "3-9-delete-time-feature": "3.9 Delete Time Feature",
+        "deleting-time-from-a-person": "Deleting Time from a Person",
+        "deleting-time-from-a-group": "Deleting Time from a Group",
+        "3-10-listing-time-for-a-person-or-group": "3.10 Listing Time for a Person or Group",
+        "listing-time-from-a-person": "Listing Time from a Person",
+        "listing-time-from-a-group": "Listing Time from a Group",
+        "3-11-find-free-time": "3.11 Find Free Time",
+        "4-planned-enhancements": "4 Planned Enhancements",
+        "4-1-undo-redo-feature": "4.1 Undo/redo feature",
+        "4-2-addtime-deletetime-feature": "4.2. addtime/deletetime feature",
+        "4-3-improving-our-user-interface": "4.3. Improving our user interface.",
+        "4-4-allowing-extensive-modification-to-command-words": "4.4. Allowing extensive modification to command words.",
+        "4-5-improving-addmeeting-feature": "4.5 Improving addmeeting feature.",
+        "5-documentation-logging-testing-configuration-dev-ops": "5 Documentation logging testing configuration dev-ops",
+        "6-appendix-requirements": "6 Appendix Requirements",
+        "6-1-product-scope": "6.1. Product scope",
+        "6-2-user-stories": "6.2. User stories",
+        "6-3-use-cases": "6.3. Use cases",
+        "6-4-non-functional-requirements": "6.4. Non-Functional Requirements",
+        "6-5-glossary": "6.5. Glossary",
+        "7-appendix-instructions-for-manual-testing": "7 Appendix Instructions for manual testing",
+        "7-1-launch-and-shutdown": "7.1. Launch and shutdown",
+        "7-2-deleting-a-person": "7.2. Deleting a person",
+        "7-3-finding-a-contact": "7.3. Finding a contact",
+        "7-4-listing-all-contacts": "7.4. Listing all contacts",
+        "7-5-creating-a-group": "7.5. Creating a group",
+        "7-6-deleting-a-group": "7.6. Deleting a Group",
+        "7-7-adding-a-group-remark": "7.7. Adding a group remark",
+        "7-8-finding-a-group": "7.8. Finding a group",
+        "7-9-listing-all-groups": "7.9. Listing all groups",
+        "7-10-adding-contacts-to-groups": "7.10. Adding contacts to groups",
+        "7-11-removing-a-contact-from-a-group": "7.11. Removing a contact from a group",
+        "7-12-adding-free-time-to-contact": "7.12. Adding free time to contact",
+        "7-13-deleting-free-time-from-contact": "7.13. Deleting free time from contact",
+        "7-14-list-free-time-of-contact": "7.14. List free time of contact",
+        "7-15-adding-meeting-time-to-group": "7.15. Adding meeting time to group",
+        "7-16-deleting-meeting-time-from-group": "7.16. Deleting meeting time from group",
+        "7-17-list-meeting-time-of-group": "7.17. List meeting time of group",
+        "7-17-find-free-time-of-group": "7.17. Find free time of group",
+        "7-18-saving-data": "7.18. Saving data",
+        "8-appendix-effort": "8 Appendix Effort",
+        "8-1-design-challenges": "8.1 Design Challenges",
+        "8-1-design-challenges-2": "8.1 Design Challenges"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "Documentation.md",
+      "title": "Documentation guide",
+      "headings": {
+        "documentation-guide": "Documentation Guide"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "Logging.md",
+      "title": "Logging guide",
+      "headings": {
+        "logging-guide": "Logging guide"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "SettingUp.md",
+      "title": "Setting up and getting started",
+      "headings": {
+        "setting-up-and-getting-started": "Setting up and getting started",
+        "setting-up-the-project-in-your-computer": "Setting up the project in your computer",
+        "before-writing-code": "Before writing code"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "Testing.md",
+      "title": "Testing guide",
+      "headings": {
+        "testing-guide": "Testing guide",
+        "running-tests": "Running tests",
+        "types-of-tests": "Types of tests"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "UserGuide.md",
+      "title": "User Guide",
+      "headings": {
+        "welcome-to-projectpro-s-user-guide": "Welcome to ProjectPRO's User Guide",
+        "introduction": "Introduction",
+        "table-of-contents": "Table of Contents",
+        "using-our-guide": "Using Our Guide",
+        "quick-start": "Quick Start",
+        "glossary": "Glossary",
+        "features": "Features",
+        "commands-to-manage-contacts": "Commands to Manage Contacts",
+        "adding-a-contact-add": "Adding a contact: add",
+        "deleting-a-contact-delete": "Deleting a contact: delete",
+        "finding-a-contact-find": "Finding a contact: find",
+        "listing-contacts-list": "Listing contacts: list",
+        "commands-to-manage-groups": "Commands to Manage Groups",
+        "adding-a-group-new": "Adding a group: new",
+        "deleting-a-group-delete": "Deleting a group: delete",
+        "adding-remarks-to-a-group-remark": "Adding remarks to a group: remark",
+        "finding-a-group-find": "Finding a group: find",
+        "listing-a-group-listgroup": "Listing a group: listgroup",
+        "grouping-a-contact-group": "Grouping a Contact: group",
+        "ungrouping-a-contact-ungroup": "Ungrouping a Contact: ungroup",
+        "commands-to-manage-time": "Commands to Manage Time",
+        "adding-time-to-a-contact-addtime": "Adding Time to a Contact: addtime",
+        "removing-time-from-a-contact-deletetime": "Removing Time from a Contact: deletetime",
+        "listing-time-from-a-contact-listtime": "Listing Time from a Contact: listtime",
+        "add-meeting-to-a-group-addmeeting": "Add Meeting to a Group: addmeeting",
+        "remove-meeting-time-from-a-group-deletetime": "Remove Meeting Time from a Group: deletetime",
+        "listing-meeting-time-from-a-group-listtime": "Listing Meeting Time from a Group: listtime",
+        "finding-free-time-of-a-group-findfreetime": "Finding Free Time of a Group: findfreetime",
+        "general-commands": "General Commands",
+        "viewing-help-help": "Viewing Help: help",
+        "clearing-all-data-clear": "Clearing All Data: clear",
+        "exit-projectpro-exit": "Exit ProjectPRO: exit",
+        "saving-the-data": "Saving the data",
+        "editing-the-data-file": "Editing the data file"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "index.md",
+      "title": "",
+      "headings": {
+        "projectpro": "ProjectPRO"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "team/coderhuang559.md",
+      "title": "Huang Yixin's Project Portfolio Page",
+      "headings": {
+        "project-projectpro": "Project: ProjectPRO"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "team/kailash201.md",
+      "title": "Kailash's Project Portfolio Page",
+      "headings": {
+        "project-projectpro": "Project: ProjectPRO"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "team/lerxuann.md",
+      "title": "Goh Ler Xuan's Project Portfolio Page",
+      "headings": {
+        "project-projectpro": "Project: ProjectPRO"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "team/nicholastng010601.md",
+      "title": "Nicholas Tng's Project Portfolio Page",
+      "headings": {
+        "project-projectpro": "Project: ProjectPRO"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "team/zd292.md",
+      "title": "John Doe's Project Portfolio Page",
+      "headings": {
+        "project-addressbook-level-3": "Project: AddressBook Level 3"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "tutorials/AddRemark.md",
+      "title": "Tutorial: Adding a command",
+      "headings": {
+        "tutorial-adding-a-command": "Tutorial: Adding a command",
+        "create-a-new-remark-command": "Create a new remark command",
+        "hook-remarkcommand-into-the-application": "Hook RemarkCommand into the application",
+        "run-the-application": "Run the application",
+        "change-remarkcommand-to-throw-an-exception": "Change RemarkCommand to throw an exception",
+        "enhancing-remarkcommand": "Enhancing RemarkCommand",
+        "make-the-command-accept-parameters": "Make the command accept parameters",
+        "parse-user-input": "Parse user input",
+        "add-remark-to-the-model": "Add Remark to the model",
+        "add-a-new-remark-class": "Add a new Remark class",
+        "make-use-of-remark": "Make use of Remark",
+        "add-a-placeholder-element-for-remark-to-the-ui": "Add a placeholder element for remark to the UI",
+        "modify-person-to-support-a-remark-field": "Modify Person to support a Remark field",
+        "modify-person": "Modify Person",
+        "update-other-usages-of-person": "Update other usages of Person",
+        "updating-storage": "Updating Storage",
+        "finalizing-the-ui": "Finalizing the UI",
+        "putting-everything-together": "Putting everything together",
+        "update-remarkcommand-and-remarkcommandparser": "Update RemarkCommand and RemarkCommandParser",
+        "writing-tests": "Writing tests",
+        "automatically-generating-tests": "Automatically generating tests",
+        "conclusion": "Conclusion"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "tutorials/RemovingFields.md",
+      "title": "Tutorial: Removing Fields",
+      "headings": {
+        "tutorial-removing-fields": "Tutorial: Removing Fields",
+        "safely-deleting-address": "Safely deleting Address",
+        "assisted-refactoring": "Assisted refactoring",
+        "manual-refactoring": "Manual refactoring",
+        "tidying-up": "Tidying up"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "tutorials/TracingCode.md",
+      "title": "Tutorial: Tracing code",
+      "headings": {
+        "tutorial-tracing-code": "Tutorial: Tracing code",
+        "before-we-start": "Before we start",
+        "setting-a-breakpoint": "Setting a breakpoint",
+        "tracing-the-execution-path": "Tracing the execution path",
+        "conclusion": "Conclusion"
+      },
+      "headingKeywords": {}
+    }
+  ]
+}
